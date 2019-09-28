@@ -284,10 +284,11 @@ var device = null;
             doAutoConnect = true;
         }
 
-        const isNumWorks = (vid === 0x0484 && pid === 0xDF11);
+        const isNumWorks = (vid === 0x0483 && pid === 0xDF11);
         if (isNumWorks) {
             doAutoConnect = true;
         }
+        console.log(`isNumWorks = ${isNumWorks} (VID = ${vid}, PID = ${pid}`);
 
         let configForm = document.querySelector("#configForm");
 
@@ -487,7 +488,7 @@ var device = null;
                         if (matching_devices.length == 1 || isNumWorks) { // For NumWorks, we want interface 0 ("Internal Flash")
                             statusDisplay.textContent = 'Connecting...';
                             device = matching_devices[0];
-                            console.log(device);
+                            console.log("Autoconnecting to device:", device);
                             device = await connect(device);
                         } else {
                             statusDisplay.textContent = "Multiple DFU interfaces found.";
