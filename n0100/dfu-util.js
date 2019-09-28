@@ -288,7 +288,7 @@ var device = null;
         if (isNumWorks) {
             doAutoConnect = true;
         }
-        console.log(`isNumWorks = ${isNumWorks} (VID = ${vid}, PID = ${pid}`);
+        console.log(`isNumWorks = ${isNumWorks} (VID = ${vid}, PID = ${pid})`);
 
         let configForm = document.querySelector("#configForm");
 

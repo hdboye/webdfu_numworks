@@ -272,7 +272,7 @@ var device = null;
             }
         } else {
             // NumWorks specialization
-            pid = 0xDF11; // STM Device in DFU Mode
+            pid = 0xA291;
         }
 
         // Grab the serial number from the landing page
@@ -286,11 +286,11 @@ var device = null;
             doAutoConnect = true;
         }
 
-        const isNumWorks = (vid === 0x0483 && pid === 0xDF11);
+        const isNumWorks = (vid === 0x0483 && pid === 0xA291);
         if (isNumWorks) {
             doAutoConnect = true;
         }
-        console.log(`isNumWorks = ${isNumWorks} (VID = ${vid}, PID = ${pid}`);
+        console.log(`isNumWorks = ${isNumWorks} (VID = ${vid}, PID = ${pid})`);
 
         let configForm = document.querySelector("#configForm");
 
