@@ -692,13 +692,13 @@ var device = null;
         uploadSlotAButton.addEventListener('click', uploadEventListener(async function(maxSize) {
           device.startAddress = 0x90000000;
           const blob = await device.do_upload(transferSize, 4096*1024);
-          saveAs(blob, "external.bin");
+          saveAs(blob, "slotA.bin");
         }));
 
         uploadSlotBButton.addEventListener('click', uploadEventListener(async function(maxSize) {
           device.startAddress = 0x90400000;
           const blob = await device.do_upload(transferSize, 4096*1024);
-          saveAs(blob, "external.bin");
+          saveAs(blob, "slotB.bin");
         }));
 
         firmwareFileField.addEventListener("change", function() {
@@ -776,7 +776,7 @@ var device = null;
           return device.do_download(transferSize, firmwareFile, false);
         }));
 
-        downloadSlotAButton.addEventListener('click', downloadEventListener(async function() {
+        downloadSlotBButton.addEventListener('click', downloadEventListener(async function() {
           device.startAddress = 0x90040000;
           return device.do_download(transferSize, firmwareFile, false);
         }));
