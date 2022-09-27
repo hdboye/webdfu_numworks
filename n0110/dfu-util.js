@@ -762,12 +762,12 @@ var device = null;
         }
 
         downloadInternalButton.addEventListener('click', downloadEventListener(async function() {
-          device.startAddress = 0x08000000;
+          device.startAddress = 0x90000000;
           return device.do_download(transferSize, firmwareFile, true);
         }));
 
         downloadExternalButton.addEventListener('click', downloadEventListener(async function() {
-          device.startAddress = 0x90000000;
+          device.startAddress = 0x90008000;
           return device.do_download(transferSize, firmwareFile, false);
         }));
 
